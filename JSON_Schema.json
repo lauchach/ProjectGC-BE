@@ -1,0 +1,90 @@
+{
+  "users": [
+    {
+      "user_id": "uuid",
+      "name": "string",
+      "email": "string",
+      "password_hash": "string",
+      "address": [
+        {
+          "address_id": "uuid",
+          "street": "string",
+          "city": "string",
+          "state": "string",
+          "postal_code": "string",
+          "country": "string"
+        }
+      ],
+      "role": "customer | admin",
+      "created_at": "datetime"
+    }
+  ],
+  "products": [
+    {
+      "product_id": "uuid",
+      "name": "string",
+      "description": "string",
+      "price": "number",
+      "currency": "string",
+      "stock_quantity": "integer",
+      "category_id": "uuid",
+      "images": ["string"],
+      "created_at": "datetime",
+      "updated_at": "datetime"
+    }
+  ],
+  "categories": [
+    {
+      "category_id": "uuid",
+      "name": "string",
+      "description": "string",
+      "parent_category_id": "uuid | null"
+    }
+  ],
+  "orders": [
+    {
+      "order_id": "uuid",
+      "user_id": "uuid",
+      "order_date": "datetime",
+      "status": "pending | processing | shipped | delivered | cancelled",
+      "total_amount": "number",
+      "shipping_address": {
+        "street": "string",
+        "city": "string",
+        "state": "string",
+        "postal_code": "string",
+        "country": "string"
+      },
+      "items": [
+        {
+          "product_id": "uuid",
+          "quantity": "integer",
+          "price_per_unit": "number"
+        }
+      ]
+    }
+  ],
+  "reviews": [
+    {
+      "review_id": "uuid",
+      "user_id": "uuid",
+      "product_id": "uuid",
+      "rating": "integer (1-5)",
+      "comment": "string",
+      "created_at": "datetime"
+    }
+  ],
+  "shopping_carts": [
+    {
+      "cart_id": "uuid",
+      "user_id": "uuid",
+      "items": [
+        {
+          "product_id": "uuid",
+          "quantity": "integer"
+        }
+      ],
+      "updated_at": "datetime"
+    }
+  ]
+}
